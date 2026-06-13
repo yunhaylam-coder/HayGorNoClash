@@ -41,36 +41,43 @@ proxy-groups:
       - 🇸🇬 新加坡节点
       - 🇺🇸 美国节点
       - DIRECT
+      - []
 
   - name: 🇭🇰 香港节点
     type: select
     proxies:
       - DIRECT
+      - []`^(.*)(香港|HK|Hong Kong|HONGKONG|HongKong)(.*)$`
 
   - name: 🇹🇼 台湾节点
     type: select
     proxies:
       - DIRECT
+      - []`^(.*)(台湾|TW|Taiwan|Tai Wan|TAIWAN|TaiWan)(.*)$`
 
   - name: 🇯🇵 日本节点
     type: select
     proxies:
       - DIRECT
+      - []`^(.*)(日本|JP|Japan|JAPAN)(.*)$`
 
   - name: 🇰🇷 韩国节点
     type: select
     proxies:
       - DIRECT
+      - []`^(.*)(韩国|KR|Korea|KOREA|South Korea)(.*)$`
 
   - name: 🇸🇬 新加坡节点
     type: select
     proxies:
       - DIRECT
+      - []`^(.*)(新加坡|SG|Singapore|SINGAPORE)(.*)$`
 
   - name: 🇺🇸 美国节点
     type: select
     proxies:
       - DIRECT
+      - []`^(.*)(美国|US|United States|USA|America)(.*)$`
 
   - name: 🎥 媒体影音
     type: select
