@@ -1,40 +1,21 @@
-# HayGorNoClash
+# Clash Configuration Workspace
 
-这是一个为 Clash 设计的定制配置文件。
+This repository manages custom Clash configuration templates and rules, optimized for subconverter usage.
 
-## 项目特点
+## Files
 
-- **规则源切换**：已从 `Loyalsoldier/clash-rules` 迁移至 `dler-io/Rules`，提供更精准的规则分流。
-- **自动化规则提供者**：利用 Clash 的 `rule-providers` 功能，支持规则集的自动更新（24小时周期）。
-- **优化分流策略**：
-    - **广告拦截**：使用 `AdBlock` 规则集。
-    - **苹果服务**：独立分流以优化 App Store 和 iCloud 体验。
-    - **AI 服务**：专门针对 OpenAI (AI Suite) 的规则配置。
-    - **国内直连**：精准识别国内域名及 IP。
-    - **流媒体优化**：针对 Netflix、Disney+ 等平台。
+- `HayGorNoClash.ini`: The primary active template for subconverter. All custom rules and proxy group adjustments are performed here.
+- `ACL4SSR_Online_Full_NoAuto.ini`: A reference template based on the ACL4SSR configuration. **Do not modify this file.**
+- `HayGorNoClash`: Binary or related tool (if applicable).
 
-## 核心配置
+## Recent Optimizations
 
-主配置文件：`HayGorNoClash.yaml`
+- **Rule Consolidation**: Merged Microsoft (Bing, OneDrive) and Google (FCM, Services) rules into unified groups.
+- **Emoji Alignment**: Ensured all major strategy groups use consistent emoji prefixes (e.g., `🌏 Google`, `Ⓜ️ 微软服务`).
+- **Rule Ordering**: Optimized the sequence of rulesets to ensure specific service matches take precedence over general GFW or country-based rules.
+- **Apple TV Support**: Added dedicated ruleset and strategy group for Apple TV using dler-io providers.
+- **Cleanup**: Removed obsolete Bilibili rulesets and the unused `HayGorNoClash.yaml` file.
 
-### 规则提供者 (Rule Providers)
+## Usage
 
-目前配置使用了 `dler-io/Rules` 仓库中的以下模块：
-- `Proxy`: 全球代理规则
-- `Domestic`: 国内直连域名
-- `Domestic IPs`: 国内 IP 段
-- `AdBlock`: 广告过滤
-- `Apple`: 苹果全家桶
-- `AI Suite`: OpenAI / Claude 等 AI 工具
-- `Telegram`: 电报即时通讯
-
-## 如何使用
-
-1. 确保你安装了支持 Rule Provider 的 Clash 客户端（如 Clash Premium, Clash Verge, Clash Meta 等）。
-2. 将 `HayGorNoClash.yaml` 导入你的客户端。
-3. 规则集会自动从 jsDelivr CDN 下载并定期更新。
-
-## 维护记录
-
-- **2026-06-13**: 初始化 Git 仓库。
-- **2026-06-13**: 将所有规则源从 Loyalsoldier 迁移至 dler-io，并适配 `classical` 行为模式。
+Use `HayGorNoClash.ini` as the remote configuration URL in your subconverter client or web interface.
